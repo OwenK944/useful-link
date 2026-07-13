@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Loading</title>
+    <title>Useful QR Code</title>
     <style>
         * {
             margin: 0;
@@ -26,26 +26,15 @@
             pointer-events: none;
         }
     </style>
+    
+    <!-- Tracker: Replace 'YOURCODE' with your GoatCounter code -->
+    <script data-goatcounter="https://owenk944.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
-    <!-- Video visually autoplays instantly, muted -->
+    <!-- Video visually autoplays instantly, completely silent -->
     <video id="rick" src="video.mp4" autoplay muted playsinline loop preload="auto"></video>
 
-    <script>
-        const vid = document.getElementById('rick');
-
-        // The invisible trap: Unmutes on the very first physical interaction
-        const triggerAudio = () => {
-            vid.muted = false;
-            // Clean up the listeners immediately after firing once
-            document.removeEventListener('touchstart', triggerAudio);
-            document.removeEventListener('click', triggerAudio);
-        };
-
-        // Bind to the entire document. Any tap or swipe triggers the audio.
-        document.addEventListener('touchstart', triggerAudio, { once: true });
-        document.addEventListener('click', triggerAudio, { once: true });
-    </script>
 </body>
 </html>
